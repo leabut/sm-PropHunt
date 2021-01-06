@@ -22,6 +22,7 @@ public int Menu_Group(Handle menu, MenuAction action, int _client, int param2) {
                 }
                 g_iModelChangeCount[client.index]++;
             }
+            DisplayMenu(g_hModelMenu, _client, RoundToFloor(GetConVarFloat(cvar_ChangeLimittime)));
         } else if (action == MenuAction_Cancel) {
             PrintToChat(client.index, "%s%t", PREFIX, "Type !hide");
         }

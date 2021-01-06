@@ -67,7 +67,7 @@ stock void BlindClient(int client, bool blind=true) {
         PbSetInt(hFadeClient, "flags", FFADE_PURGE);
     }
 
-    int color[] = {255, 0, 0, 255};
+    int color[] = {0, 0, 0, 255};
     PbSetColor(hFadeClient, "clr", color);
     EndMessage();
 }

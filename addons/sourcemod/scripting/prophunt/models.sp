@@ -67,7 +67,7 @@ stock void Client_ReCreateFakeProp(PHClient client) {
         SetEntityModel(entity, fullPath);
         SetEntityMoveType(entity, MOVETYPE_NONE);
         SetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity", client.index);
-        SetEntProp(entity, Prop_Data, "m_CollisionGroup", 1);
+        SetEntProp(entity, Prop_Data, "m_CollisionGroup", 5);
         SetEntProp(entity, Prop_Send, "m_usSolidFlags", 12);
         SetEntProp(entity, Prop_Send, "m_nSolidType", 6);
         DispatchSpawn(entity);
@@ -77,6 +77,7 @@ stock void Client_ReCreateFakeProp(PHClient client) {
 
         SetEntityRenderMode(client.index, RENDER_NONE);
         SetEntityRenderMode(entity, RENDER_TRANSCOLOR);
+        SetEntProp(client.index, Prop_Data, "m_CollisionGroup", 2);
 
         PHEntity child = new PHEntity(entity);
         //child.TeleportTo(client);

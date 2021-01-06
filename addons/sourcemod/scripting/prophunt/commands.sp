@@ -126,9 +126,7 @@ public Action ForceWhistle(int client, int args) {
         return Plugin_Handled;
 
     if (GetClientTeam(target) == CS_TEAM_T && IsPlayerAlive(target)) {
-        char sound[MAX_WHISTLE_LENGTH];
-        g_WhistleSounds.GetString(GetRandomInt(0, g_WhistleSounds.Length - 1), sound, MAX_WHISTLE_LENGTH);
-        EmitSoundToAll(sound, target, SNDCHAN_AUTO, SNDLEVEL_GUNFIRE);
+        MakeClientWhistle(target);
         PrintToChatAll("%s%N %t", PREFIX, target, "whistled");
     } else {
         ReplyToCommand(client, "Hide and Seek: %t", "Only terrorists can use");
